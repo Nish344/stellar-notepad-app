@@ -1,4 +1,37 @@
-node_modules/
-.wrangler/
-.dev.vars
-.dev.vars
+# Node / Frontend
+frontend/node_modules/
+frontend/package-lock.json
+frontend/.cache/
+frontend/dist/
+frontend/build/
+frontend/.parcel-cache/
+frontend/.next/
+frontend/.vite/
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Rust / Contract
+contract/target/
+contract/Cargo.lock
+
+# WASM build artifacts
+*.wasm
+*.wat
+
+# tarballs / binaries
+**/*.tar.gz
+stellar-cli.tar.gz
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Temp
+*.tmp
+*.swp
