@@ -325,9 +325,8 @@ https://soroban-testnet.stellar.org
 # 👤 Author
 
 **Nishanth Antony**
-Built for Stellar Hackathon / Competition
-Powered by Stellar, Soroban & Freighter
 
 ---
 
 Just tell me!
+
