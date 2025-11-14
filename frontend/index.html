@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Notepad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <svg class="icon-large" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <h1>Stellar Notepad</h1>
+                </div>
+                <p class="subtitle">Store your notes on the blockchain forever</p>
+            </header>
+
+            <!-- Main Card -->
+            <div class="card">
+                <!-- Connect Section -->
+                <div id="connectSection" class="connect-section">
+                    <svg class="icon-xl" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <h2>Connect Your Wallet</h2>
+                    <p>Connect Freighter to start storing notes on Stellar</p>
+                    <button id="connectBtn" class="btn btn-primary">
+                        Connect Freighter Wallet
+                    </button>
+                </div>
+
+                <!-- Main Section (hidden initially) -->
+                <div id="mainSection" style="display: none;">
+                    <!-- Wallet Info -->
+                    <div class="wallet-info">
+                        <p class="label">Connected Wallet</p>
+                        <p class="address" id="walletAddress"></p>
+                    </div>
+
+                    <!-- Alerts -->
+                    <div id="errorAlert" class="alert alert-error" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <p id="errorMessage"></p>
+                    </div>
+
+                    <div id="successAlert" class="alert alert-success" style="display: none;">
+                        <p id="successMessage"></p>
+                    </div>
+
+                    <!-- Create Note -->
+                    <div class="note-input-section">
+                        <label class="label">New Note (max 280 chars)</label>
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="noteInput" 
+                                maxlength="280" 
+                                placeholder="Enter your note..."
+                                class="input"
+                            >
+                            <button id="saveBtn" class="btn btn-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Save
+                            </button>
+                        </div>
+                        <p class="char-count"><span id="charCount">0</span>/280 characters</p>
+                    </div>
+
+                    <!-- Notes List -->
+                    <div class="notes-section">
+                        <h3 class="notes-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Your Notes (<span id="noteCount">0</span>)
+                        </h3>
+
+                        <div id="notesContainer" class="notes-list">
+                            <!-- Notes will be inserted here -->
+                        </div>
+
+                        <div id="emptyState" class="empty-state">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            <p>No notes yet. Create your first note!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Powered by Stellar & Soroban Smart Contracts</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
